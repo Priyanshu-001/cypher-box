@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="icon" 
+      type="image/png" href="../photos/favicon.png"  sizes="464x404">
+	 <meta name="description" content="A must have toolbox for a deciphering adventure" />
+	  <meta name="theme-color" content="#1bcf27" />
+	<link href="https://fonts.googleapis.com/css2?family=Anton&family=Abril+Fatface&family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="{% static '/c1.css' %}">
+	<title>
+		CryptX
+	</title>
+	 <meta charset="utf-8" />
+	 <link rel="manifest" href="{% static '/web.webmanifest' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   
+
+</head>
+<body>
+	<script type="text/javascript">
+		if('serviceWorker' in navigator) {
+  // navigator.serviceWorker.register('/sw.js');
+  
+}
+	</script>
+
+	<header class="header">
+	<center>	<t1>Crypt
+		</t1>
+		<t2>
+		X
+	</t2>
+
+
+</center>
+	</header>
+
+<main class="main"> 
+{% block content%}
+{% endblock %}
+
+
+</main>
+
+
+
+<footer class = "footer">
+
+	Contact
+	<!-- <br>
+	<hr>
+	<a class="contact" href="https://predictorjee.sarahah.com/"> Sarahah</a>
+	<br>
+	 <a class = "contact" href="https://www.quora.com/profile/Predictor-Jee"> Quora</a> -->
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<section id='playground'>
+	<label for ="plaintext">PLaintext</label>
+	<input type="text" name="plaintext" id="plaintext" v-model="plaintext" placeholder="plaintext"> 
+	<button @click="create_msg">
+		Encode Msg
+	</button>
+	<table v-if="CodeReady" id="mapping">
+	<tr>
+		<th> Value </th>
+		<th> Code  </th>
+	</tr>
+	<template v-for ="(code,value) of codeBook" :key="codeBook">
+	<tr>
+		<td>
+			{[ value ]}
+		</td>
+		<td>
+			{[ code ]}
+		</td>
+	</tr>
+	</template>
+	</table>
+	<label for="encoded"></label>
+	<div id="encoded">
+		
+			{[ encodedMsg ]}
+
+	</div>
+
+</section>
+
+<script type="text/javascript" src="/static/snippets/huffman.js"></script>

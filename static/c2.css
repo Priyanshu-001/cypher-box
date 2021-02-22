@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Zilla+Slab:ital,wght@1,700&display=swap');
+
+p{
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.85rem;
+}
+h1
+{
+  padding-top: 10px;
+  font-size: 3rem;
+ 
+  font-family: 'Zilla Slab', serif;
+}
+main
+{
+	flex-direction: row;
+}
+h2
+{
+	font-size: 2.5rem;
+	font-family: 'Zilla Slab', serif;
+
+}
+.info
+{
+  flex: 3;
+ /* width: 75%;*/
+ 		margin-right: 55px;
+  
+
+}
+.sidebar
+{	padding-top: 85px;
+	flex: 2;
+	position: sticky;
+	right: 0px;
+}
+.mini-container
+p
+{	
+	font-size: 28px;
+	font-family: "Courier Bold";
+	margin: 0;
+
+}
+label {
+	font-size: 1.5rem;
+}
+input{
+	font-size: 1.5rem;
+}
+ .message{
+	border-color: red;
+    border-width: thick;
+    margin: 10px;
+    min-height: 3rem;
+    background: #ff5656;
+    color: white;
+    padding: 5px
+}
+body{
+	font-size: 1.5rem;
+}
+input [type="number"]
+{
+	font-size: 1rem;
+	width: fit-content;
+}
+#mapping  {
+  border: 1px solid black;
+}
+@media only screen and (max-width:800px)
+{
+  main{
+    flex-direction: column;
+  }
+  
+}

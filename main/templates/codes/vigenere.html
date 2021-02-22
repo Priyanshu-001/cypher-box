@@ -1,0 +1,34 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<section id='playground'>
+	<table>
+		<tr>
+			<td>
+				<label for="plaintext"> Plaintext: </label>
+			</td>
+			<td>
+	<input type="text" name="plaintext" id="plaintext" v-model="plaintext" placeholder="plaintext">
+			</td>
+</tr>
+<tr>
+	<td>
+		<label for="key"> Key: </label>
+	</td>
+	<td>
+	<input type="text" pattern= "[a-zA-Z]+" name="key" v-model="key" placeholder="key" oninvalid="setCustomValidity('Enter only alphabets')">
+	</td>
+</tr>
+	<tr>
+		<td>
+		<label for="ciphertext"> Ciphertext: </label>
+		</td>
+		<td>
+	<input type="text" id="ciphertext" v-model="ciphertext" placeholder="ciphertext">
+</td>
+	</tr>
+</table>
+<message v-if="keyEnter" class="red message">
+{[ message ]}
+</message>
+</section>
+<script type="text/javascript" src="/static/snippets/vingere.js"></script>

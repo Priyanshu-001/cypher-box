@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href=" /static/c2.css">
+<div class="info" >
+	<h1>
+		{{title.name}}
+	</h1>
+	<p>
+	{{title.description}}
+</p>
+	{% include title.link %}
+</div>
+<aside class="sidebar">
+
+
+{% if  resource %}
+<div class="mini-container">
+<h2>
+	Resources
+</h2>
+
+<ul>
+	{% for resources in resource %}
+	<li>
+	<a href={{ resources.link }}>
+		{{ resources.name }}
+	</a>
+	</li>
+	{% endfor %}
+</ul>
+
+</div>
+{% endif %}
+
+{% if  variant %}
+<div class="mini-container">
+<h2>
+	Variants
+</h2>
+
+<ul>
+	{% for variants in variant %}
+	<li>
+	<strong>
+		{{ variants.name }}: 
+	</strong>
+	<description>
+		{{ variants.description }}
+	</description>
+	</li>
+	{% endfor %}
+</ul>
+
+</div>
+{% endif %}
+
+	</aside>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="icon" 
+      type="image/png" href="{% static 'imgs/favicon.png' %}"  sizes="464x404">
+	 <meta name="description" content="A must have toolbox for a deciphering adventure: Tools to encrypt/decrypt caesar cipher, Affine Cipher, Vigenere Cipher, Morse Code, Huffman" />
+	  <meta name="theme-color" content="#1bcf27" />
+	<link href="https://fonts.googleapis.com/css2?family=Anton&family=Abril+Fatface&family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="{% static 'c1.css' %}">
+	<title>
+		CryptX
+	</title>
+	 <meta charset="utf-8" />
+	 <link rel="manifest" href="{% static 'web.webmanifest' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   
+
+</head>
+<body>
+	<script type="text/javascript">
+		if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+  
+}
+	</script>
+
+	<header class="header" id="header">
+	<center>	<t1>C<t2>y</t2>pher - Bo<t2>x</t2>
+		</t1>
+
+</center>
+	</header>
+
+<main class="main"> 
+{% block content%}
+{% endblock %}
+
+
+</main>
+
+
+
+<footer class = "footer">
+
+	Contact
+</footer>
+
+</body>
+</html>
