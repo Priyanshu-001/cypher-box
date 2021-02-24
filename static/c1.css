@@ -57,7 +57,7 @@ t2
 main {
  
    
-   transition: all .25s linear;
+   transition: all .82s ease-out;
    background-color: #ffffff;
    align-content:center;
    min-height: 100vh;
@@ -77,22 +77,7 @@ main {
   flex-wrap: wrap;
   
 }
-/*@media screen and (min-width: 900px) {
-    .main
-    {
-      
-      width: 89vw;
-      margin: 0 auto 0 auto;
-    }
-  }
-@media screen and (max-width: 900px)
-{
-  .main
-  {   margin-left: 0vw;
-      margin-right: 0vw;
-      width: 100vw
-  }
-}*/
+
 .gallery a
 {
       text-decoration-line: none;
@@ -117,7 +102,6 @@ max-width: 450px
 .snippets
 {    background: #990000;
     max-width: 24vw;
-
     color: white;
     min-width: 150PX;
     height: 100px;
@@ -169,3 +153,20 @@ align-items: flex-start;
 justify-content: left;
 }
 
+@media only screen and (max-width:800px)
+{
+  main{
+    flex-direction: column;
+     padding: 25px 1ch 25px 1ch;
+     margin-right: 0px;
+     margin-left: 0px;
+     overflow-wrap: anywhere;
+  }
+  .snippets{
+    width: fit-content;
+    min-height: fit-content;
+    border-radius: 0px;
+
+  }
+
+}

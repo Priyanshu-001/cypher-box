@@ -61,8 +61,9 @@ reverseBook:
 			let texty =[]
 		for(let i=0; i<this.plaintext.length; i++){
 			
-			
+			if(this.plaintext[i] in this.codeBook){
 			texty.push(this.codeBook[this.plaintext[i]])
+    }
 			
 			}
 			this.ciphertext = texty.join(' ')
@@ -73,8 +74,12 @@ reverseBook:
 			let sd = this.ciphertext.split(' ')
 			let xt=[]
 			for(let i=0; i<sd.length; i++)
-			{
-				xt.push(this.reverseBook[sd[i]])
+			{  if(sd[i] in this.reverseBook){
+				    xt.push(this.reverseBook[sd[i]])
+      }
+      else{
+        this.message="invalid morse code"
+      }
 
 			}
 			this.plaintext = xt.join('')

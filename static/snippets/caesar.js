@@ -6,7 +6,7 @@ view = new Vue({
 		ciphertext: '',
 		latest: true,
 		shift: (text, k, preseveCaps = true)=>{
-
+				k=k%26;
 		var newText = '';
 		
 		if (!preseveCaps)

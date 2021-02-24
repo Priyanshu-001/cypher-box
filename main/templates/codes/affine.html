@@ -1,53 +1,53 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 <section id="playground">
-<table>	
-	<tbody>
-		<tr>
+	
+	
+		<div class="holder">
 
-<td><label for="plaintext">Plaintext: </label>
-</td>
-<td><input type="text" id="plaintext"  placeholder="plaintext" v-model="plaintext"></td>
-</tr>
-<tr>
-<td>
+<label for="plaintext">Plaintext: </label>
+
+<input type="text" id="plaintext"  placeholder="plaintext" v-model="plaintext">
+</div>
+<div class="holder">
+
 <label for="a">a: </label>
-</td>
-<td>
+
+
 <input type="number" name="box" v-model="a">
 <input type="range" name="a" id="a" v-model="a">
 
-</td>
-</tr>
-<tr>
-<td>
+
+</div>
+<div class="holder">
+
 <label for="b">
 b:
  </label>
-</td>
-<td>
+
+
 <input type="number" name="key-box" v-model="b">
 <input type="range" name="b" id="b" v-model="b">
-</td>
-</tr>
-<tr>
-<td>
+
+</div>
+<div class="holder">
+
  <label for="ciphertext">Ciphertext:
  </label>
-</td>
-<td>
-<input type="text" name="ciphertext" id="ciphertext" placeholder="ciphertext" v-model="ciphertext">
-</td>
-</tr>
-<tr>
-<td>
 
-</td>
-</tr>
-</tbody>
-</table>
-<message class="message" v-if="!allowed || show">
+
+<input type="text"  name="ciphertext" id="ciphertext" placeholder="ciphertext" v-model="ciphertext">
+
+</div>
+<div class="holder">
+
+
+
+</div>
+
+
+<div class="message" v-if="!allowed || show">
 {[ message ]}
-</message>
+</div>
 
 
 </section>

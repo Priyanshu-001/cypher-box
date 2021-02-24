@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Zilla+Slab:ital,wght@1,700&display=swap');
 
-p{
+article{
 	font-family: 'Raleway', sans-serif;
-	font-size: 1.85rem;
+    font-size: 1.3rem;
+    max-width: 60ch;
+    overflow-wrap: break-word;
 }
 h1
 {
-  padding-top: 10px;
-  font-size: 3rem;
+  font-size: 4rem;
+   padding-top: 0.4ch;
  
   font-family: 'Zilla Slab', serif;
 }
 main
 {
 	flex-direction: row;
+	flex-direction: space-around;
 }
 h2
 {
@@ -23,17 +26,19 @@ h2
 }
 .info
 {
-  flex: 3;
- /* width: 75%;*/
- 		margin-right: 55px;
+  	flex: 3;
+  	margin: 0px auto 0px auto;
+  	 max-width: fit-content;
   
 
 }
 .sidebar
-{	padding-top: 85px;
-	flex: 2;
-	position: sticky;
-	right: 0px;
+{	max-width: fit-content;
+    padding-top: 85px;
+    flex: 1;
+    padding-left: 3ch;
+    position: sticky;
+    right: 0px;
 }
 .mini-container
 p
@@ -50,14 +55,15 @@ input{
 	font-size: 1.5rem;
 }
  .message{
+ 	box-sizing: border-box;
 	border-color: red;
     border-width: thick;
     margin: 10px;
     min-height: 3rem;
     background: #ff5656;
     color: white;
-    padding: 5px
-}
+    padding: 1.2ch
+    }
 body{
 	font-size: 1.5rem;
 }
@@ -66,6 +72,12 @@ input [type="number"]
 	font-size: 1rem;
 	width: fit-content;
 }
+.holder
+{
+	display: flex;
+	padding-top: 2ch;
+	flex-direction: column;
+}
 #mapping  {
   border: 1px solid black;
 }
@@ -73,6 +85,14 @@ input [type="number"]
 {
   main{
     flex-direction: column;
+     padding: 25px 1ch 25px 1ch;
+     margin-right: 0px;
+     margin-left: 0px;
   }
+  .sidebar
+{
+	padding-left: 0px;
+}
   
 }
+

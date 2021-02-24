@@ -1,7 +1,7 @@
-{ "Name": "Crypt x",
+{ "Name": "Cypher-Box",
   "short_name": "Cryptx",
   
-  "description": "The best tool in decipher's toolbox",
+  "description": "Best companion for a deciphering adventure",
   "icons": [
     
     {

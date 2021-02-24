@@ -2,26 +2,27 @@
 
 <section id='playground'>
 
-	<table>
-		<tr>
-<td>	<label for="plaintext">Plaintext: </label></td>
-<td>	<input type="text" name="plaintext" v-model="plaintext" id = "plaintext" placeholder="plaintext"></td>
-</tr>
-<tr>
-	<td>	<label for="key"> Key: </label></td>
 
-<td>	<input type="number" name="key-box" v-model.number="key" min='0' max='25'>
-<input type="range" id="key" name="key" v-model.number="key" min=0 max=25></td>
-</tr>
-<tr>
-<td>	<label for="ciphertext">Ciphertext: </label></td>
-<td>	<input type="text" id="ciphertext" name="ciphertext" v-model="ciphertext" placeholder="ciphertext"></td>
-</tr>
+	<div class="holder">
+		<label for="plaintext">Plaintext: </label></td>
+		<input type="text" name="plaintext" v-model="plaintext" id = "plaintext" placeholder="plaintext">
+	</div>
+
+	<div class="holder">
+		<label for="key"> Key: </label>
+		<input type="number" name="key-box" v-model.number="key" min='0' max='25'>
+		<input type="range" id="key" name="key" v-model.number="key" min=0 max=25>
+	</div>
+
+	<div class="holder">
+		<label for="ciphertext">Ciphertext: </label>
+		<input type="text" id="ciphertext" name="ciphertext" v-model="ciphertext" placeholder="ciphertext">
+	</div>
  
-</table>
-<message v-if="!latest" class="red message">
+
+<div v-if="!latest" class="red message">
 	Type in any of the input to update its corresponding output(s).
-</message>
+</div>
 
 </section>
 
