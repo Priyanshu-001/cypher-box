@@ -161,12 +161,20 @@ justify-content: left;
   .snippets{
     width: fit-content;
     min-height: fit-content;
-   
+    pa
     width: 100%;
     align-items: center;
     justify-content: center;
     /* padding-left: .5ch */
 
   }
+@media only screen and (max-width:450px)
+{
+  .snippets
+  {
+    margin: 0px;
+  }
+}
+
 
 }
