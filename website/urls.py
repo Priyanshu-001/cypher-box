@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 from django.urls import path
-from main.views import home, tools
+from main.views import home, tools, search
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name='home'),
     path('tool/<toolname>',tools, name='tools'),
-    path('sw.js', (TemplateView.as_view(template_name="sw.js", content_type='application/javascript', )), name='sw.js')
+    path('sw.js', (TemplateView.as_view(template_name="sw.js", content_type='application/javascript', )), name='sw.js'),
+    path('search/',search,name='search'),
 
 
 ]

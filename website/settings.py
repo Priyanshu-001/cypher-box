@@ -10,8 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import django_heroku
+import os
 from pathlib import Path
-
+import dj_database_url
+URI = os.environ.get('DATABASE_URL')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'iq8hup@q(2n-opc7e)jwg+z@rh5m7l-j)3(--%x_1z20l!c@(r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 DEBUG_PROPAGATE_EXCEPTIONS = True
@@ -94,6 +96,10 @@ DATABASES = {
         'DATABASE_URL': 'postgres://naiwbkcolqzwfu:97f2c9e7ab1eef74010972c7452d24c47cb677f5103245a79f71fcb04b8fa711@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/daih6q3kum9id7'
     }
 }
+if 'DATABASE_URL' in os.environ:
+    
+    DATABASES['default'] = dj_database_url.config()
+
 
 
 # Password validation

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href=" /static/c2.css">
+
+<div class="card_house">
+{% for result in results %}
+<div class="cards">
+ <a href={{ url }}><h2> {{ result.name }} </h2> </a>
+ <p>
+ {{ result.description|truncatechars:T }}
+</p>
+</div>
+{% endfor %}
+</div>
+
+{{ q }}
+
+{% endblock %}

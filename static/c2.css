@@ -95,4 +95,25 @@ input [type="number"]
 }
   
 }
+.card_house {
+  display: flex;
+  flex-direction: column;
+  margin: 0.8ch auto 0.8ch auto;
+  align-self: center;
+}
+.cards
+{ 
+  max-width: 35ch;
+
+}
+.cards .h2
+{
+  font-size: 8rem;
+  left: 0px;
+
+}
+.card p
+{
+  font-size: 1rem;
+}
 
