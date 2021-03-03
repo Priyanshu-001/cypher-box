@@ -17,7 +17,7 @@ def tools(req, toolname):
 	try:
 		cipher = tool.objects.get(urlName = toolname)
 	except tool.DoesNotExist:
-		raise Http404(f" {cipher} does not exist")
+		raise Http404(f" {toolname} does not exist")
 	
 	data = {'title': cipher, 'variant':cipher.variations.all(), 'resource': cipher.resources.all(), 'desc': str(str("encode/decode using ")+ str(cipher.name) +str(" at cypher-box")) }
 	return render(req, 'main/tools.html',data)

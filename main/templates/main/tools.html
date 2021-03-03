@@ -4,7 +4,13 @@
 	<title>
 		{{title.name}} at Cypher-Box
 	</title>
-<meta name="theme-color" content="#F00" />
+<meta name="theme-color" content={{title.color}} />
+<style type="text/css">
+	.header{
+		background-color: {{title.color}};
+	}
+</style>
+
 {% endblock %}
 {% block content %}
 
