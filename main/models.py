@@ -27,5 +27,6 @@ class tool(models.Model):
 	resources = models.ManyToManyField(resources,blank=True, null=True)
 	variations = models.ManyToManyField(variations, blank=True, null=True)
 	isReady = models.BooleanField(default=True)
+	color = models.CharField(max_length=7,default="#ede7e6")
 	def __str__(self):
 		return self.name
