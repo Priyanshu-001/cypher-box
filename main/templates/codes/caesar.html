@@ -5,7 +5,7 @@
 
 	<div class="holder">
 		<label for="plaintext">Plaintext: </label></td>
-		<input type="text" name="plaintext" v-model="plaintext" id = "plaintext" placeholder="plaintext">
+		<input type="text" name="plaintext" :value="plaintext" @input="plaintext = $event.target.value" id = "plaintext" placeholder="plaintext">
 	</div>
 
 	<div class="holder">
@@ -16,7 +16,7 @@
 
 	<div class="holder">
 		<label for="ciphertext">Ciphertext: </label>
-		<input type="text" id="ciphertext" name="ciphertext" v-model="ciphertext" placeholder="ciphertext">
+		<input type="text" id="ciphertext":value="ciphertext" @input="ciphertext = $event.target.value" name="ciphertext" v-model="ciphertext" placeholder="ciphertext">
 	</div>
  
 

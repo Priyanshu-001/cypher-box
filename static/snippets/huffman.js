@@ -125,6 +125,7 @@ view = new Vue({
 		mapping: {},
 		CodeReady: false,
 		encodedMsg: '',
+		ready: false
 	},
 methods:
 {
@@ -191,6 +192,7 @@ methods:
 			}
 			console.log(x)
 			this.encodedMsg = x.join('')
+			this.ready = true
 		}
 	},
 

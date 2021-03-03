@@ -22,7 +22,7 @@
 	</tr>
 	</template>
 	</table>
-	<label for="encoded"></label>
+	<label for="encoded" v-if="ready"> Encoded Msg: </label>
 	<div id="encoded">
 		
 			{[ encodedMsg ]}
