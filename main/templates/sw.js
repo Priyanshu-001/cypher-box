@@ -3,7 +3,9 @@ self.addEventListener('fetch', function(event) {
 
  event.respondWith(
    caches.match(event.request).then(function(response) {
-     return response || fetch(event.request);
+     return response || fetch(event.request).catch(() => 
+      {return caches.match('/offline')
+    });
    })
  );
 });
@@ -24,7 +26,13 @@ self.addEventListener('install',e=>{
        '/tool/shift_cipher',
        '/tool/affine_cipher',
        '/tool/vigenere_cipher',
-       '/tool/morse_code'
+       '/tool/morse_code',
+       '/offline',
+       '/tool/torah_code',
+      ' /static/snippets/torah.js',
+      'https://cdn.jsdelivr.net/npm/vue@2'
+
+
         ])
       }))});
 

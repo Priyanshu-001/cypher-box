@@ -7,7 +7,7 @@
 	<label for="plaintext">Plaintext: </label>
 			
 			
-	<input type="text" id="plaintext" v-model="plaintext" placeholder="plaintext">
+	<input type="text" id="plaintext" value="plaintext" @input="plaintext = $event.target.value"  placeholder="plaintext">
 			
 		</div>
 		<div class="holder">
@@ -15,7 +15,7 @@
 	<label for="ciphertext"> Ciphertext: </label>
 		
 		
-	<input type="text"  pattern="\.*\-* " id="ciphertext" v-model="ciphertext" placeholder="ciphertext">
+	<input type="text"  pattern="\.*\-* " id="ciphertext" :value="ciphertext" @input="ciphertext = $event.target.value" placeholder="ciphertext">
 		
 		</div>
 	

@@ -30,5 +30,7 @@ def search(req):
 	
 	return render(req,'main/search.html', {'results': results, 'q': query, 'T': trun})
 
+def offline(req):
 
+	return render(req, 'main/offline.html')
 

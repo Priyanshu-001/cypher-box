@@ -4,21 +4,25 @@
 	<title>
 		 {{title.name}} at Cypher-Box 
 	</title>
+	<meta content=" {{title.name}} at Cypher-Box " property="og:title" />
+
+	<meta content="{{desc}} " property="og:description" />
 <meta name="theme-color" content=" {{title.color}} " />
+
+
+{% endblock %}
+{% block content %}
 <style type="text/css">
 	.header{
 		background-color: {{title.color}};
 	}
 </style>
-
-{% endblock %}
-{% block content %}
-
 <link rel="stylesheet" type="text/css" href=" /static/c2.css">
 <div class="info" >
 	<h1>
 		{{title.name}}
 	</h1>
+	<em> Jump to <a href="#playground">demo</a></em>
 	<article>
 	{{title.description}}
 	</article>

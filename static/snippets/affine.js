@@ -33,13 +33,13 @@ view = new Vue({
 			let charCode = this.plaintext.charCodeAt(i);
 			if (charCode <= 122 && charCode >=97)
 			{		charCode-=97;
-					charCode = (this.a*charCode + this.b)%26;
+					charCode = (this.a*(charCode%26) + this.b%26)%26;
 					charCode += 97;
 			} 
 			else if(charCode <= 90 && charCode >=65)
 			{
 				charCode -= 65;
-				charCode = (this.a*charCode + this.b)%26;
+				charCode = (this.a*(charCode%26) + this.b%26)%26;
 				charCode += 65;
 			}
 			
@@ -56,7 +56,7 @@ view = new Vue({
 			newText = ''
 			for(let i=0; i<this.ciphertext.length; i++)
 		{	
-			key= this.inverse[this.candidates.indexOf(this.a)]
+			key= this.inverse[this.candidates.indexOf(this.a%26)]
 			
 
 			let charCode = this.ciphertext.charCodeAt(i);

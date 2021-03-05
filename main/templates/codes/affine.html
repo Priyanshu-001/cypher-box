@@ -6,7 +6,7 @@
 
 <label for="plaintext">Plaintext: </label>
 
-<input type="text" id="plaintext"  placeholder="plaintext" v-model="plaintext">
+<input type="text" id="plaintext"  placeholder="plaintext"  @input="plaintext = $event.target.value" >
 </div>
 <div class="holder">
 
@@ -35,7 +35,7 @@ b:
  </label>
 
 
-<input type="text"  name="ciphertext" id="ciphertext" placeholder="ciphertext" v-model="ciphertext">
+<input type="text"  name="ciphertext" id="ciphertext" placeholder="ciphertext" :value="ciphertext" @input="ciphertext = $event.target.value">
 
 </div>
 <div class="holder">

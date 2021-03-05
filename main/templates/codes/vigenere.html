@@ -7,7 +7,7 @@
 				<label for="plaintext"> Plaintext: </label>
 			</td>
 			
-	<input type="text" name="plaintext" id="plaintext" v-model="plaintext" placeholder="plaintext">
+	<input type="text" name="plaintext" id="plaintext" value="plaintext" @input="plaintext = $event.target.value" placeholder="plaintext">
 			</td>
 
 
@@ -23,7 +23,7 @@
 		<label for="ciphertext"> Ciphertext: </label>
 		</td>
 		
-	<input type="text" id="ciphertext" v-model="ciphertext" placeholder="ciphertext">
+	<input type="text" id="ciphertext" :value="ciphertext" @input="ciphertext = $event.target.value" placeholder="ciphertext">
 </td>
 	
 

@@ -1,9 +1,12 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
 <section id='playground'>
-	<input type="text" name="ciphertext" id="ciphertext" v-model="ciphertext" placeholder="ciphertext">
-	
-	<input type="text" name="plaintext" id="plaintext" v-model="plaintext" placeholder="plaintext" disabled>
-	
+	<div class="holder">
+	<input type="text" name="ciphertext" id="ciphertext" placeholder="ciphertext" :value="ciphertext" @input="ciphertext = $event.target.value">
+	<input type="number" name="key-box" v-model.number="key" min='0' max={[ciphertext.length]}>
+	<input type="range" id="key" name="key" v-model.number="key" min=0 max={[ciphertext.length]}>
+	<label for="plaintext">Plaintext</label>
+	<span id="plaintext"> {[ plaintext ]}</span>
+	</div>
 </section>
-<script type="text/javascript" src="skipCode.js"></script>
+<script type="text/javascript" src="/static/snippets/torah.js"></script>

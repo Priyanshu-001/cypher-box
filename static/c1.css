@@ -57,7 +57,7 @@ main {
    
    transition: all .82s ease-out;
    background-color: #ffffff;
-   align-content:center;
+   justify-content:center;
    min-height: 100vh;
    height: fit-content;
    justify-content: center;
