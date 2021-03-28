@@ -1,12 +1,50 @@
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
 
 <section id='playground'>
-	<div class="holder">
-	<input type="text" name="ciphertext" id="ciphertext" placeholder="ciphertext" :value="ciphertext" @input="ciphertext = $event.target.value">
-	<input type="number" name="key-box" v-model.number="key" min='0' max={[ciphertext.length]}>
-	<input type="range" id="key" name="key" v-model.number="key" min=0 max={[ciphertext.length]}>
-	<label for="plaintext">Plaintext</label>
-	<span id="plaintext"> {[ plaintext ]}</span>
-	</div>
+<v-card flat class="px-3">
+	 <v-textarea   counter id="ciphertext" outlined label="Ciphertext" :value="ciphertext" @input.native="e=>ciphertext = e.target.value" :rules=rules>
+		 <v-icon id="ciphertext_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+
+     
+  		>
+    mdi-content-copy
+ </v-icon>
+
+	</v-textarea>
+
+	 <v-slider
+              v-model="key"
+              :max=350
+              :min="0"
+              label="key"
+			 step="1"
+              class="align-center"
+               thumb-label
+            >
+              <template v-slot:append>
+                <v-text-field
+                  v-model="key"
+                  class="mt-0 pt-0"
+                  type="number"
+                  style="width: 60px"
+                ></v-text-field>
+              </template>
+            </v-slider>
+	<v-textarea   id="plaintext" readonly outlined label="plaintext" :value="plaintext" @input.native="e=>plaintext = e.target.value">
+     <v-icon id="plaintext_Icon"
+      slot="append" 
+      @click="copyIt($event)">
+
+       mdi-content-copy
+ </v-icon>
+
+	</v-textarea>
+
+
+     
+ 
+</v-card>
 </section>
-<script type="text/javascript" src="/static/snippets/torah.js"></script>
+

@@ -1,5 +1,5 @@
-view = new Vue({
-	el: '#playground',
+mixin = {
+	
 	data: {
 		plaintext:'',
 		ciphertext: '',
@@ -86,4 +86,4 @@ reverseBook:
 
 		}
 	}
-})
+}

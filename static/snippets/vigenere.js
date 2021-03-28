@@ -1,12 +1,12 @@
-view = new Vue({
-	el: '#playground',
-	delimiters: ['{[', ']}'],
+mixin = {
+	
+	
 	data:{
 		plaintext: '',
 		ciphertext: '',
-		key: '',
+		key: 'Cypher',
 		fullkey: [],
-		dispKey: '',
+		dispKey: 'Cypher',
 		keyEnter: false,
 		message: ''
 
@@ -98,4 +98,4 @@ view = new Vue({
 				this.updatePlaintext()
 			}
 	}
-})
+}

@@ -10,17 +10,18 @@ CharField.register_lookup(Lower)
 # Create your views here.
 
 def home(req):
+	allTools = tool.objects.filter(isReady=True)
 
-	return render(req, 'main/index.html')
+	return render(req, 'newUI.html',{'Ciphers': allTools})
 	
 def tools(req, toolname):
 	try:
 		cipher = tool.objects.get(urlName = toolname)
 	except tool.DoesNotExist:
 		raise Http404(f" {toolname} does not exist")
-	
-	data = {'title': cipher, 'variant':cipher.variations.all(), 'resource': cipher.resources.all(), 'desc': str(str("encode/decode using ")+ str(cipher.name) +str(" at cypher-box")) }
-	return render(req, 'main/tools.html',data)
+	filename = cipher.link.split('/')[1].split('.')[0]
+	data = {'cypher': cipher, 'variant':cipher.variations.all(),'filename': filename, 'resource': cipher.resources.all(), 'desc': str(str("encode/decode using ")+ str(cipher.name) +str(" at cypher-box")) }
+	return render(req, 'tools.html',data)
 
 def search(req):
 	trun = req.GET.get('trun', 75)

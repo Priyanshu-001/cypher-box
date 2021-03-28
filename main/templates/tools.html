@@ -1,0 +1,55 @@
+{% extends "headAndFoot.html" %}
+{% block headinfo %}
+ <meta name="description" content=" {{desc}}" />
+	<title>
+		 {{cypher.name}} at Cypher-Box 
+	</title>
+	<meta content=" {{cypher.name}} at Cypher-Box " property="og:title" />
+
+	<meta content="{{desc}} " property="og:description" />
+
+
+
+{% endblock %}
+{% block content %}
+
+<v-container>
+	<v-fade-transition >
+	<v-col color="#121212">
+		<h1 class="text-h2">
+			{{cypher.name}}
+		</h1>
+	</v-col>
+</v-fade-transition>
+</v-container>
+<v-container >
+	<v-row>
+	<v-card dense class="rounded-t-xl" padding="12px">
+	<v-card-title>
+		Overview
+	</v-card-title>
+	<v-card-text class="text-body-1" style="max-width: 80ch; min-width: 80ch; font-size: 2.4rem;">
+		{{cypher.description}}
+	</v-card-text>
+	
+		{% include cypher.link %}
+	
+	</v-card>
+	<v-spacer>
+	</v-spacer>
+	
+
+
+
+
+	</v-row>
+	<v-row>
+	</v-row>
+</v-container>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/snippets/priority.js"></script>
+<script type="text/javascript" src="/static/snippets/{{ filename }}.js"></script>
+<script type="text/javascript" src="/static/tool.js"></script>
+{% endblock %}

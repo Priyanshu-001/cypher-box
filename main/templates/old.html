@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% block head %}
+{% extends "headAndFoot.html" %}
+{% block head_info %}
  <meta name="description" content=" {{desc}}" />
 	<title>
 		 {{title.name}} at Cypher-Box 
@@ -7,17 +7,12 @@
 	<meta content=" {{title.name}} at Cypher-Box " property="og:title" />
 
 	<meta content="{{desc}} " property="og:description" />
-<meta name="theme-color" content=" {{title.color}} " />
+
 
 
 {% endblock %}
 {% block content %}
-<style type="text/css">
-	.header{
-		background-color: {{title.color}};
-	}
-</style>
-<link rel="stylesheet" type="text/css" href=" /static/c2.css">
+<v-container>
 <div class="info" >
 	<h1>
 		{{title.name}}
@@ -74,4 +69,10 @@
 
 	</aside>
 
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/snippets/caesar.js"></script>
+<script type="text/javascript" src="/static/register.js"></script>
+<script type="text/javascript" src="/static/tool.js"></script>
 {% endblock %}

@@ -1,0 +1,18 @@
+<v-card flat>   <v-textarea   id="ciphertext" outlined label="Ciphertext" v-model="ciphertext">
+       <v-icon id="ciphertext_Icon"
+        slot="append" 
+        @click="copyIt($event)"
+       
+    >
+      mdi-content-copy
+   </v-icon>
+   <v-icon id="ciphertext_Icon2"
+        slot="append" 
+        @click="pasteIt($event)"
+    >   
+    
+      mdi-content-paste
+   </v-icon>
+    </v-textarea>
+   
+  </v-card>

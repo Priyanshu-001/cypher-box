@@ -1,0 +1,104 @@
+{% extends 'headAndFoot.html' %}
+   {% block headinfo %}
+   <title> Cypher-box </title>
+  
+  <meta content="Cypher-box" property="og:title" />
+   <meta name="description" content="A must have toolbox for a deciphering adventure: Tools to encrypt/decrypt caesar cipher, Affine Cipher, Vigenere Cipher, Morse Code, Huffman Encoding, torah code" property="og:description"/>
+   {%  endblock %}
+
+  {% block content %}
+          
+        <v-container class="d-flex flex-column align-center justify-center pa-5 " transition="slide-y-transition">
+          <h1 class="text-h1 text--center py-15 strong">
+            Cypher Box
+          </h1>
+          <p class="body-4 font-italic strong">
+              The goto  tool for a deciphering adventure.
+          </p>
+          <p>
+
+          </p>
+
+        </v-container>
+        <v-container  class="d-flex flex-column align-center  rounded-t-xl grey darken-4"  color="colors.red.darken1">
+        
+           <h2 class="text-h3 align-center">
+            All Cyphers
+         </h2>
+         <v-divider>
+         </v-divider>
+        
+           <div style="padding: 10px; margin: 5px;">
+        </div>
+
+          <v-container class="d-flex flex-column align-stretch " >
+        <v-row cols="24" >
+
+      <v-col  cols="20"
+        sm='6'
+        md="8">
+        <v-text-field solo dense label='search' v-model='search' prepend-inner-icon="mdi-magnify" placeholder='search'  clearable >
+        </v-text-field>
+        <v-spacer>
+        </v-spacer>
+    </v-col>
+    <v-col cols="12"
+        md="4"
+        sm='6'>
+        <v-select dense 
+            solo
+            clearable
+            v-model="filter"
+            :items="items"
+            chips
+            label="Filter"
+            multiple
+            prepend-inner-icon="mdi-filter"
+          >
+            <template v-slot:selection="{ item, index }">
+              
+
+        <v-chip v-if="index < 1" >
+          <span>{[ item ]}</span>
+          <v-btn text x-small fab  @click.stop="remove(index)">
+            <v-icon > mdi-close-circle</v-icon>
+            </v-btn>
+
+        </v-chip>
+        <span
+          v-if="index === 1"
+          class="grey--text caption"
+        >
+          (+{[ filter.length - 1 ]} others)
+        </span>
+      </template>
+          </v-select>
+</v-col>
+        </v-row>
+      </v-container>
+        <v-container class= "column justify-start mb-6">
+          <v-row>
+              
+             {% for cipher in Ciphers %}
+           
+                <div class="snippets" v-if="(filter.includes('{{ cipher.cat }}') || filter.length===0) && ('{{ cipher.name }}'.toLowerCase().indexOf(search.toLowerCase()) !== -1 || search == '') " style="background: linear-gradient(0deg, {{cipher.grad2}} 0%, {{cipher.grad1}} 100%);">
+              <a href="/tool/{{cipher.urlName}}" style="color: white;">
+              {{cipher.name}}
+              </a>
+          </div>
+
+          
+                 
+          {% endfor %}
+          
+          </v-row>
+      
+        </v-container>    
+        </v-container>
+        {% endblock %}
+     
+
+</div>
+{% block scripts%}
+<script type="text/javascript" src="static/app.js"></script>
+{% endblock %}

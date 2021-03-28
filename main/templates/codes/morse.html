@@ -1,23 +1,34 @@
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
 
 <section id='playground'>
 	
-		<div class="holder">
-			
-	<label for="plaintext">Plaintext: </label>
-			
-			
-	<input type="text" id="plaintext" value="plaintext" @input="plaintext = $event.target.value"  placeholder="plaintext">
-			
-		</div>
-		<div class="holder">
-		
-	<label for="ciphertext"> Ciphertext: </label>
-		
-		
-	<input type="text"  pattern="\.*\-* " id="ciphertext" :value="ciphertext" @input="ciphertext = $event.target.value" placeholder="ciphertext">
-		
-		</div>
+		<v-card flat class="px-3">
 	
+<v-textarea   id="plaintext" outlined label="plaintext" :value="plaintext" @input.native="e=>plaintext = e.target.value">
+     <v-icon id="ciphertext_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
+
+  </v-textarea>
+	
+	<v-textarea   id="ciphertext" outlined label="Ciphertext" :value="ciphertext" @input.native="e=>ciphertext = e.target.value">
+		 <v-icon id="ciphertext_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
+
+	</v-textarea>
+		
+	
+ 
+ 
+</v-card>
+
 </section>
-<script type="text/javascript" src="/static/snippets/morse.js"></script>

@@ -1,0 +1,83 @@
+
+
+view = new Vue({
+
+  el: '#app',
+  delimiters: ['{[', ']}'],
+   mounted: function(){this.$nextTick(function(){
+      this.$el.removeAttribute('hidden')
+    })},
+  vuetify: new Vuetify({
+  theme: { dark: true },
+}),
+  data: () => ({
+    A2HS: false,
+  	A2HSDone: false,
+  }),
+
+  methods: {
+    
+  	// copyIt: function(eve)
+   //  { console.log(eve);
+      // targetId = eve.currentTarget.id;
+      // targetId = targetId.split('_')[0];
+   //    console.log(targetId)
+   //    let testingCodeToCopy = document.querySelector('#'+targetId)
+   //        testingCodeToCopy.setAttribute('type', 'text')    
+   //        testingCodeToCopy.select()
+
+   //        try {
+   //          var successful = document.execCommand('copy');
+   //          var msg = successful ? 'successful' : 'unsuccessful';
+            
+   //        } 
+   //        catch (err) {
+           
+   //        }
+
+   //        /* unselect the range */
+   //        testingCodeToCopy.setAttribute('type', 'hidden')
+   //        window.getSelection().removeAllRanges()
+   //      },
+    
+
+   //  },
+   pasteIt: async function(eve)
+   {    
+     targetId = eve.currentTarget.id;
+      targetId = targetId.split('_')[0];
+      let target = document.getElementById(targetId)
+        
+         
+     
+      
+      content = await navigator.clipboard.readText();
+      target.value += content
+     
+   },
+   copyIt: async function(eve)
+   {
+    try {
+        targetId = eve.currentTarget.id;
+      targetId = targetId.split('_')[0];
+      let testingCodeToCopy = document.getElementById(targetId)
+        
+          testingCodeToCopy.select()
+          testingCodeToCopy =  testingCodeToCopy.value
+          console.log(testingCodeToCopy)
+          content = await navigator.clipboard.writeText(testingCodeToCopy);
+    
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+   }
+ },
+  
+  mixins: [mixin],
+})
+Vue.use(Vuetify)
+
+  
+
+
+  //  

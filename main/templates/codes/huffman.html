@@ -1,34 +1,54 @@
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
 
 <section id='playground'>
-	<label for ="plaintext">Plaintext</label>
-	<input type="text" name="plaintext" id="plaintext" v-model="plaintext" placeholder="plaintext"> 
-	<button @click="create_msg">
+<v-card flat class="px-3 pb-4">	
+	<v-textarea   id="plaintext" outlined label="Plaintext" :value="plaintext" @input.native="e=>plaintext = e.target.value">
+		 <v-icon id="plaintext_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
+
+	</v-textarea>
+	<v-btn @click="create_msg">
 		Encode Msg
-	</button>
-	<table v-if="CodeReady" id="mapping">
-	<tr>
-		<th> Value </th>
-		<th> Code  </th>
-	</tr>
-	<template v-for ="(code,value) of codeBook" :key="codeBook">
-	<tr>
-		<td>
-			{[ value ]}
-		</td>
-		<td>
-			{[ code ]}
-		</td>
-	</tr>
-	</template>
-	</table>
-	<label for="encoded" v-if="ready"> Encoded Msg: </label>
-	<div id="encoded">
-		
-			{[ encodedMsg ]}
+	</v-btn>
 
-	</div>
+	<v-textarea  v-if="CodeReady" class="my-4"  readonly id="encodedMsg" outlined label="Encoded Message" :value="encodedMsg" @input.native="e=>encodedMsg = e.target.value">
+		 <v-icon id="encodedMsg_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+      mdi-content-copy
+</v-icon>
+</v-textarea>
+	 <v-simple-table v-if="CodeReady">
+    <template v-slot:default>
+      <thead>
+        <tr>
+          <th class="text-left body-1 strong" >
+            Character
+          </th>
+          <th class="text-left body-1 strong">
+            Code
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="(value,item) in codeBook"
+          :key="item"
+        >
+          <td>{[ item ]}</td>
+          <td>{[ value ]}</td>
+        </tr>
+      </tbody>
+    </template>
+  </v-simple-table>
 
+</v-card>
 </section>
 
-<script type="text/javascript" src="/static/snippets/huffman.js"></script>

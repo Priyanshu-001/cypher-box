@@ -1,49 +1,71 @@
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 <section id="playground">
 	
 	
-		<div class="holder">
+	<v-card flat class="px-3">
+	<v-textarea   id="plaintext" outlined label="plaintext" :value="plaintext" @input.native="e=>plaintext = e.target.value">
+     <v-icon id="ciphertext_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
 
-<label for="plaintext">Plaintext: </label>
+  </v-textarea>
+ 
 
-<input type="text" id="plaintext"  placeholder="plaintext"  @input="plaintext = $event.target.value" >
-</div>
-<div class="holder">
+	
+	
+   <v-slider
+              v-model="a"
+              :max="25"
+              :min="0"
+              label="A"
+			 step="1"
+              class="align-center"
+               thumb-label
+            >
+              <template v-slot:append>
+                <v-text-field
+                  v-model="a"
+                  class="mt-0 pt-0"
+                  type="number"
+                  style="width: 60px"
+                ></v-text-field>
+              </template>
+            </v-slider>
+     <v-slider
+              v-model="b"
+              :max="25"
+              :min="0"
+              label="B"
 
-<label for="a">a: </label>
+              class="align-center"
+               thumb-label
+            >
+              <template v-slot:append>
+                <v-text-field
+                  v-model="b"
+                  class="mt-0 pt-0"
+                  type="number"
+                  step="1"
+                  style="width: 60px"
+                ></v-text-field>
+              </template>
+            </v-slider>
+            <v-textarea   id="ciphertext" outlined label="Ciphertext" :value="ciphertext" @input.native="e=>ciphertext = e.target.value">
+		 <v-icon id="ciphertext_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
 
-
-<input type="number" name="box" v-model="a">
-<input type="range" name="a" id="a" v-model="a">
-
-
-</div>
-<div class="holder">
-
-<label for="b">
-b:
- </label>
-
-
-<input type="number" name="key-box" v-model="b">
-<input type="range" name="b" id="b" v-model="b">
-
-</div>
-<div class="holder">
-
- <label for="ciphertext">Ciphertext:
- </label>
-
-
-<input type="text"  name="ciphertext" id="ciphertext" placeholder="ciphertext" :value="ciphertext" @input="ciphertext = $event.target.value">
-
-</div>
-<div class="holder">
-
-
-
-</div>
-
+	</v-textarea>
+  
+ 
+</v-card>
 
 <div class="message" v-if="!allowed || show">
 {[ message ]}

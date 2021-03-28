@@ -28,5 +28,8 @@ class tool(models.Model):
 	variations = models.ManyToManyField(variations, blank=True, null=True)
 	isReady = models.BooleanField(default=True)
 	color = models.CharField(max_length=7,default="#ede7e6")
+	grad1 = models.CharField(max_length=24,default="rgb(196, 20, 98)")
+	grad2 = models.CharField(max_length=24, default="rgb(4, 8, 0)")
+	cat = models.CharField(max_length=12, default="Traditional")
 	def __str__(self):
 		return self.name

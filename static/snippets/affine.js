@@ -1,12 +1,12 @@
-view = new Vue({
-	el: '#playground',
-	delimiters: ['{[', ']}'],
+mixin = {
+	
 	data:
 	{	
 		a: 7,
 		b: 45,
 		allowed: true,
 		show: false,
+		
 		message: "something isn't right",
 		inverse:    [1, 9, 21, 15, 3, 19, 7, 23, 11, 5, 17, 25],
 		candidates: [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25],
@@ -21,7 +21,7 @@ view = new Vue({
 					return this.gcd(b,a%b)
 				}
 		},
-		check: function(){
+		check: function(){ 
 			return  this.gcd(this.a,26)===1;
 		},
 		encrypt: function()
@@ -119,4 +119,4 @@ view = new Vue({
 		}
 
 	}
-})
+}

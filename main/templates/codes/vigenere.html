@@ -1,30 +1,42 @@
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
 
 <section id='playground'>
 	
-		<div class="holder">
-			
-				<label for="plaintext"> Plaintext: </label>
-			</td>
-			
-	<input type="text" name="plaintext" id="plaintext" value="plaintext" @input="plaintext = $event.target.value" placeholder="plaintext">
-			</td>
-
+		<v-card flat class="px-3">
+	
 
 	
-		<label for="key"> Key: </label>
-	</td>
-	
-	<input type="text" pattern= "[a-zA-Z]+" name="key" v-model="key" placeholder="key" oninvalid="setCustomValidity('Enter only alphabets')">
-	</td>
+	<v-textarea   id="plaintext" outlined label="Plaintext" :value="plaintext" @input.native="e=>plaintext = e.target.value">
+		 <v-icon id="plaintext_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
+
+	</v-textarea>
+	<v-text-field id="key" :value="key" label="key" @input.native="e=>key = e.target.value"> 
+		 <v-icon id="key_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
+	</v-text-field>
+
+<v-textarea   id="ciphertext" outlined label="Ciphertext" :value="ciphertext" @input.native="e=>ciphertext = e.target.value">
+		 <v-icon id="ciphertext_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
+</v-textarea>
 
 	
-		
-		<label for="ciphertext"> Ciphertext: </label>
-		</td>
-		
-	<input type="text" id="ciphertext" :value="ciphertext" @input="ciphertext = $event.target.value" placeholder="ciphertext">
-</td>
 	
 
 <message v-if="keyEnter" class="red message">
@@ -32,4 +44,3 @@
 </message>
 </div>
 </section>
-<script type="text/javascript" src="/static/snippets/vingere.js"></script>

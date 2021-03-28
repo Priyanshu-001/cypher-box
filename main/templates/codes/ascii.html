@@ -1,0 +1,32 @@
+
+
+<section id='playground'>
+	
+	<v-card flat class="px-3">
+	
+
+	
+	<v-textarea   id="plaintext" outlined label="plaintext" :value="plaintext" @input.native="e=>plaintext = e.target.value">
+     <v-icon id="plaintext_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
+
+</v-textarea>
+ 
+	<v-textarea   id="ASCII" outlined label="ASCII" readonly :value="ascii" @input.native="e=>ascii = e.target.value">
+     <v-icon id="ASCII_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
+
+  </v-textarea>
+
+	
+</section>

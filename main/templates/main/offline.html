@@ -1,16 +1,12 @@
-{% extends "base.html" %}
+{% extends "headAndFoot.html" %}
 
 {% block content %}
-<link rel="stylesheet" type="text/css" href="/static/c2.css">
-<style type="text/css">
-	.main
-	{
-		flex-direction: column;
-		justify-content: flex-start;
-		align-content: center;
-	}
-</style>
-<h1>You offline bro </h1>
+
+<h1  class="text-h1">You are offline</h1>
 <br>
-<p>  Hit me up when you are back online</p>
+<p class="body-4">  Come back when you are online</p>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="static/app.js"></script>
 {% endblock %}

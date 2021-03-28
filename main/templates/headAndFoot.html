@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+   <!--  Meta tags-->
+   <meta charset="utf-8" />  
+ <meta name="theme-color" content="#1e1e1e" />
+  <!-- Vue +Vuetify-->
+    <link href="/static/dev.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <!-- Favicons -->
+  <link rel="icon" 
+      type="image/png" href=" /static/imgs/favicon.png "  sizes="464x404">
+  <link rel="apple-touch-icon" href=" /static/imgs/favicon.png">
+
+
+ 
+<!-- PWA -->
+<link rel="manifest" href="/static/web.webmanifest">
+<script type="text/javascript" src="/static/getSw.js"></script>
+
+  {% block headinfo %}
+
+  {% endblock %}
+</head>
+<body>
+  <div id="app">
+ <v-app hidden color="#21212">
+      <v-main dark >
+        <v-app-bar   dark  fixed app   hide-on-scroll > 
+          <v-app-bar-title ><span>CYPHER BOX</span></v-app-bar-title>
+          <v-spacer>
+          </v-spacer>
+          
+          <v-btn text @click="installApp" v-if="A2HS && !!A2HSDone">
+            <v-icon>
+              mdi-download
+            </v-icon>
+            PWA
+          </v-btn>
+        
+        </v-app-bar>
+     
+        {% block content %}
+
+        {% endblock %}
+      </v-main>
+    </v-app>
+
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+{% block scripts %}
+{% endblock %}
+
+</body>
+</html>
+

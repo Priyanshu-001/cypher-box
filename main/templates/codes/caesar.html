@@ -1,30 +1,57 @@
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
-<section id='playground'>
+<section id="playground">
 
+<v-card flat class="px-3">
+	
 
-	<div class="holder">
-		<label for="plaintext">Plaintext: </label></td>
-		<input type="text" name="plaintext" :value="plaintext" @input="plaintext = $event.target.value" id = "plaintext" placeholder="plaintext">
-	</div>
+	
+	<v-textarea   id="ciphertext" outlined label="Ciphertext" :value="ciphertext" @input.native="e=>ciphertext = e.target.value">
+		 <v-icon id="ciphertext_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
 
-	<div class="holder">
-		<label for="key"> Key: </label>
-		<input type="number" name="key-box" v-model.number="key" min='0' max='25'>
-		<input type="range" id="key" name="key" v-model.number="key" min=0 max=25>
-	</div>
+	</v-textarea>
+   <v-slider
+              v-model="key"
+              :max="25"
+              :min="0"
+              label="Key"
+             
+              class="align-center"
+               thumb-label="auto"
+            >
+              <template v-slot:append>
+                <v-text-field
+                  v-model="key"
+                  class="mt-0 pt-0"
+                  type="number"
+                  step="1"
+                  style="width: 60px"
+                ></v-text-field>
+              </template>
+            </v-slider>
+  <v-textarea   id="plaintext" outlined label="plaintext" :value="plaintext" @input.native="e=>plaintext = e.target.value">
+     <v-icon id="ciphertext_Icon"
+      slot="append" 
+      @click="copyIt($event)"
+     
+  >
+    mdi-content-copy
+ </v-icon>
 
-	<div class="holder">
-		<label for="ciphertext">Ciphertext: </label>
-		<input type="text" id="ciphertext":value="ciphertext" @input="ciphertext = $event.target.value" name="ciphertext" v-model="ciphertext" placeholder="ciphertext">
-	</div>
+  </v-textarea>
  
-
+ 
+</v-card>
 <div v-if="!latest" class="red message">
 	Type in any of the input to update its corresponding output(s).
 </div>
 
+
+
+
 </section>
-
-<script type="text/javascript" src="/static/snippets/caesar.js"></script>
-

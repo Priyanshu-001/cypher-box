@@ -1,7 +1,6 @@
-view = new Vue({
-	el: '#playground',
-	data:
-	{	key: 4,
+var mixin = {
+
+	data: {	key: 4,
 		plaintext: '',
 		ciphertext: '',
 		latest: true,
@@ -60,4 +59,4 @@ view = new Vue({
 		
 
 	}
-})
+}
