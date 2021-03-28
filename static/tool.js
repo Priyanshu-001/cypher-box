@@ -42,6 +42,24 @@ view = new Vue({
     
 
    //  },
+   installApp: function()
+    {
+     
+      
+      this.deferedPrompt.prompt();
+      this.deferedPrompt.userChoice.then((choiceResult) => {
+          if(choiceResult.outcome === 'accepted' )
+          {
+            this.A2HSDone = true;
+            localStorage.A2HSDone = this.A2HSDone;
+          }
+          else
+          {
+            console.log('Install App rejected');
+          }
+      })
+
+    }
    pasteIt: async function(eve)
    {    
      targetId = eve.currentTarget.id;
