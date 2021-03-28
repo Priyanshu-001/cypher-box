@@ -5,8 +5,8 @@ view = new Vue({
   el: '#app',
   delimiters: ['{[', ']}'],
    mounted: function(){
-      if(localStorage.A2HSDone){
-        this.A2HSDone = localStorage.A2HSDone
+      if(localStorage.A2HSDone == 'true'){
+        this.A2HSDone = true
        }
        else{
         localStorage.A2HSDone = false;
@@ -27,7 +27,7 @@ view = new Vue({
   	filter: [],
   	search: '',
     A2HS: false,
-    A2HSDone:false,
+    A2HSDone: false,
     deferedPrompt: '',
   }),
   methods: {
