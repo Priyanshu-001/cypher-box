@@ -4,15 +4,29 @@ view = new Vue({
 
   el: '#app',
   delimiters: ['{[', ']}'],
-   mounted: function(){this.$nextTick(function(){
+   mounted: function(){
+
+     this.firstPaint = false;
+      if(localStorage.A2HSDone == 'true'){
+        this.A2HSDone = true
+       }
+       else{
+        localStorage.A2HSDone = false;
+       }
+    this.$nextTick(function(){
       this.$el.removeAttribute('hidden')
-    })},
+
+    })
+    
+   },
   vuetify: new Vuetify({
   theme: { dark: true },
 }),
   data: () => ({
     A2HS: false,
   	A2HSDone: false,
+     deferedPrompt: '',
+    firstPaint: true
   }),
 
   methods: {
@@ -59,7 +73,7 @@ view = new Vue({
           }
       })
 
-    }
+    },
    pasteIt: async function(eve)
    {    
      targetId = eve.currentTarget.id;

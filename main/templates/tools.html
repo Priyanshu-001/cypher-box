@@ -1,4 +1,5 @@
 {% extends "headAndFoot.html" %}
+{% load static %}
 {% block headinfo %}
  <meta name="description" content=" {{desc}}" />
 	<title>
@@ -24,11 +25,11 @@
 </v-container>
 <v-container >
 	<v-row>
-	<v-card dense class="rounded-t-xl" padding="12px">
+	<v-card dense class="rounded-t-xl py-5 my-2" >
 	<v-card-title>
 		Overview
 	</v-card-title>
-	<v-card-text class="text-body-1" style="max-width: 80ch; min-width: 80ch; font-size: 2.4rem;">
+	<v-card-text class="text-body-1" style="max-width: 80ch;  font-size: 2.4rem;">
 		{{cypher.description}}
 	</v-card-text>
 	
@@ -49,7 +50,7 @@
 {% endblock %}
 
 {% block scripts %}
-<script type="text/javascript" src="/static/snippets/priority.js"></script>
-<script type="text/javascript" src="/static/snippets/{{ filename }}.js"></script>
-<script type="text/javascript" src="/static/tool.js"></script>
+<script type="text/javascript" src="{% static 'snippets/priority.js' %}"></script>
+<script type="text/javascript" src="{% static filename %}"></script>
+<script type="text/javascript" src="{% static 'tool.js' %}"></script>
 {% endblock %}

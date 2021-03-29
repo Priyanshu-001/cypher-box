@@ -22,7 +22,7 @@ urlpatterns = [
     path('',home,name='home'),
     path('offline',offline, name='offline'),
     path('tool/<toolname>',tools, name='tools'),
-    path('sw.js', (TemplateView.as_view(template_name="sw.js", content_type='application/javascript', )), name='sw.js'),
+    path('serviceworker.js', (TemplateView.as_view(template_name="serviceworker.js", content_type='application/javascript', )), name='sw.js'),
     path('search/',search,name='search'),
 
 

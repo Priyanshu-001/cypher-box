@@ -20,6 +20,7 @@ def tools(req, toolname):
 	except tool.DoesNotExist:
 		raise Http404(f" {toolname} does not exist")
 	filename = cipher.link.split('/')[1].split('.')[0]
+	filename = 'snippets/'+filename+'.js'
 	data = {'cypher': cipher, 'variant':cipher.variations.all(),'filename': filename, 'resource': cipher.resources.all(), 'desc': str(str("encode/decode using ")+ str(cipher.name) +str(" at cypher-box")) }
 	return render(req, 'tools.html',data)
 

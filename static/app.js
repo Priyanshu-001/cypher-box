@@ -5,6 +5,7 @@ view = new Vue({
   el: '#app',
   delimiters: ['{[', ']}'],
    mounted: function(){
+    this.firstPaint = false;
       if(localStorage.A2HSDone == 'true'){
         this.A2HSDone = true
        }
@@ -14,7 +15,9 @@ view = new Vue({
     this.$nextTick(function(){
       this.$el.removeAttribute('hidden')
 
-    })},
+    })
+
+  },
 
    
 
@@ -29,6 +32,7 @@ view = new Vue({
     A2HS: false,
     A2HSDone: false,
     deferedPrompt: '',
+    firstPaint: true
   }),
   methods: {
   	remove: function(i)

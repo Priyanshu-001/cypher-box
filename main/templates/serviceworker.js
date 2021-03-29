@@ -17,7 +17,13 @@ self.addEventListener('install',e=>{
         return cache.addAll( [
        
       'https://cdn.jsdelivr.net/npm/vue@2',
-      '/offline'
+      '/offline',
+      '/static/dev.css',
+     ' https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',
+     'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css',
+     'https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css',
+     'https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.js',
+     'https://cdn.jsdelivr.net/npm/vue@2.6.12'
 
 
         ])

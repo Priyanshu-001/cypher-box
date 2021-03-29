@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="EN">
 <head>
@@ -13,14 +13,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <!-- Favicons -->
   <link rel="icon" 
-      type="image/png" href=" /static/imgs/favicon.png "  sizes="464x404">
-  <link rel="apple-touch-icon" href=" /static/imgs/favicon.png">
+      type="image/png" href=" {% static 'imgs/favicon.png' %} "  sizes="464x404">
+  <link rel="apple-touch-icon" href=" {% static 'imgs/favicon.png' %}">
 
 
  
 <!-- PWA -->
-<link rel="manifest" href="/static/web.webmanifest">
-<script type="text/javascript" src="/static/getSw.js"></script>
+<link rel="manifest" href="{% static 'web.webmanifest' %}">
+<script type="text/javascript" src="{% static 'getSw.js' %}"></script>
 
   {% block headinfo %}
 
@@ -28,14 +28,20 @@
 </head>
 <body>
   <div id="app">
- <v-app hidden color="#21212">
+ <v-app  hidden color="#21212">
       <v-main dark >
+        <v-overlay :value="firstPaint">
+      <v-progress-circular
+        indeterminate
+        size="64"
+      ></v-progress-circular>
+      </v-overlay>
         <v-app-bar   dark  fixed app   hide-on-scroll > 
-          <v-app-bar-title ><span>CYPHER BOX</span></v-app-bar-title>
+          <a href="/" style="color: white;" ><v-app-bar-title ><span>CYPHER BOX</span></v-app-bar-title></a>
           <v-spacer>
           </v-spacer>
           
-          <v-btn text @click="installApp" v-if="A2HS">
+          <v-btn text @click="installApp" v-if="A2HS && !A2HSDone">
             <v-icon>
               mdi-download
             </v-icon>
@@ -52,8 +58,8 @@
 
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.js"></script>
 {% block scripts %}
 {% endblock %}
 
