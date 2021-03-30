@@ -22,6 +22,7 @@
 			 step="1"
               class="align-center"
                thumb-label
+               :rules = rule2
             >
               <template v-slot:append>
                 <v-text-field
@@ -29,6 +30,7 @@
                   class="mt-0 pt-0"
                   type="number"
                   style="width: 60px"
+                  :rules = rule2_
                 ></v-text-field>
               </template>
             </v-slider>

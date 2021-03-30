@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 from django.urls import path
-from main.views import home, tools, search, offline
+from main.views import home, tools, search, offline, gverify
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('google72554b0362b554d7.html',gverify),
     path('',home,name='home'),
     path('offline',offline, name='offline'),
     path('tool/<toolname>',tools, name='tools'),

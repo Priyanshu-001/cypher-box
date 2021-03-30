@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import tool
-from django.http import Http404
+from django.http import Http404, HttpResponse
 from django.db.models import CharField
 from django.db.models.functions import Lower
 
@@ -8,7 +8,8 @@ CharField.register_lookup(Lower)
 # CharField.register_lookup(trigram_similar)
 
 # Create your views here.
-
+def gverify(req):
+	return HttpResponse('google-site-verification: google72554b0362b554d7.html')
 def home(req):
 	allTools = tool.objects.filter(isReady=True)
 
