@@ -22,7 +22,8 @@ def tools(req, toolname):
 		raise Http404(f" {toolname} does not exist")
 	filename = cipher.link.split('/')[1].split('.')[0]
 	filename = 'snippets/'+filename+'.js'
-	data = {'cypher': cipher, 'variant':cipher.variations.all(),'filename': filename, 'resource': cipher.resources.all(), 'desc': str(str("encode/decode using ")+ str(cipher.name) +str(" at cypher-box")) }
+	generalDesc = 'Cypher-Box contains encryption/decryption tools needed for a deciphering adventure.'
+	data = {'cypher': cipher, 'variant':cipher.variations.all(),'filename': filename, 'resource': cipher.resources.all(), 'desc': str(str("Encrypt or decrypt using ")+ str(cipher.name) +str(" at cypher-box.")+ generalDesc) }
 	return render(req, 'tools.html',data)
 
 def search(req):

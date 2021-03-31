@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.views.generic.base import TemplateView
 from django.urls import path
 from main.views import home, tools, search, offline, gverify
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('google72554b0362b554d7.html',gverify),
@@ -25,6 +26,9 @@ urlpatterns = [
     path('tool/<toolname>',tools, name='tools'),
     path('serviceworker.js', (TemplateView.as_view(template_name="serviceworker.js", content_type='application/javascript', )), name='sw.js'),
     path('search/',search,name='search'),
+    path('sitemap.xml', (TemplateView.as_view(template_name="sitemap.xml", content_type='application/xml',)), name='sitemap.xml'),
+    # path('sitemap.xml', sitemap, {'sitemaps': sitemap},
+    # name='django.contrib.sitemaps.views.sitemap')
 
 
 ]
