@@ -23,7 +23,8 @@ self.addEventListener('install',e=>{
      'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css',
      'https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css',
      'https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.js',
-     'https://cdn.jsdelivr.net/npm/vue@2.6.12'
+     'https://cdn.jsdelivr.net/npm/vue@2.6.12',
+     'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.css.map'
 
 
         ])
