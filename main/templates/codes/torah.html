@@ -2,15 +2,19 @@
 
 <section id='playground'>
 <v-card flat class="px-3">
-	 <v-textarea   counter id="ciphertext" outlined label="Ciphertext" :value="ciphertext" @input.native="e=>ciphertext = e.target.value" :rules=rules>
-		 <v-icon id="ciphertext_Icon"
-      slot="append" 
-      @click="copyIt($event)"
+	 <v-textarea   counter id="Ciphertext" outlined label="Ciphertext" :value="ciphertext" @input.native="e=>ciphertext = e.target.value" :rules=rules>
+		 <v-btn slot="append" id="Ciphertext_Icon"
+      @click="copyIt($event)" fab small text >
+     <v-icon 
+      medium
+     aria-label="Copy-Ciphertext" role="img" aria-name="Copy" aria-hidden="false"
 
      
-  		>
+  >
+
     mdi-content-copy
  </v-icon>
+</v-btn>
 
 	</v-textarea>
 
@@ -35,13 +39,18 @@
               </template>
             </v-slider>
 	<v-textarea   id="plaintext" readonly outlined label="plaintext" :value="plaintext" @input.native="e=>plaintext = e.target.value">
-     <v-icon id="plaintext_Icon"
-      slot="append" 
-      @click="copyIt($event)">
+    <v-btn slot="append" id="plaintext_Icon"
+      @click="copyIt($event)" fab small text >
+     <v-icon 
+      medium
+     aria-label="Copy-Plaintext" role="img" aria-name="Copy" aria-hidden="false"
 
-       mdi-content-copy
+     
+  >
+
+    mdi-content-copy
  </v-icon>
-
+</v-btn>
 	</v-textarea>
 
 

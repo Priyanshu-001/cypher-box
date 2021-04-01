@@ -7,33 +7,47 @@
 
 	
 	<v-textarea   id="plaintext" outlined label="Plaintext" :value="plaintext" @input.native="e=>plaintext = e.target.value">
-		 <v-icon id="plaintext_Icon"
-      slot="append" 
-      @click="copyIt($event)"
+		<v-btn slot="append" id="plaintext_Icon"
+      @click="copyIt($event)" fab small text >
+     <v-icon 
+      medium
+     aria-label="Copy-Plaintext" role="img" aria-name="Copy" aria-hidden="false"
+
      
   >
+
     mdi-content-copy
  </v-icon>
+</v-btn>
 
 	</v-textarea>
 	<v-text-field id="key" :value="key" label="key" @input.native="e=>key = e.target.value"> 
-		 <v-icon id="key_Icon"
-      slot="append" 
-      @click="copyIt($event)"
+	<v-btn slot="append" id="key_Icon"
+      @click="copyIt($event)" fab small text >
+     <v-icon 
+      medium
+     aria-label="Copy-Key" role="img" aria-name="Copy" aria-hidden="false"
+
      
   >
-    mdi-content-copy
- </v-icon>
+  mdi-content-copy
+</v-icon>
+</v-btn>
 	</v-text-field>
 
-<v-textarea   id="ciphertext" outlined label="Ciphertext" :value="ciphertext" @input.native="e=>ciphertext = e.target.value">
-		 <v-icon id="ciphertext_Icon"
-      slot="append" 
-      @click="copyIt($event)"
+<v-textarea   id="Ciphertext" outlined label="Ciphertext" :value="ciphertext" @input.native="e=>ciphertext = e.target.value">
+		<v-btn slot="append" id="Ciphertext_Icon"
+      @click="copyIt($event)" fab small text >
+     <v-icon 
+      medium
+     aria-label="Copy-Ciphertext" role="img" aria-name="Copy" aria-hidden="false"
+
      
   >
+
     mdi-content-copy
  </v-icon>
+</v-btn>
 </v-textarea>
 
 	

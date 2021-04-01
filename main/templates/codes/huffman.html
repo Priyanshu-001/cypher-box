@@ -3,29 +3,38 @@
 <section id='playground'>
 <v-card flat class="px-3 pb-4">	
 	<v-textarea   id="plaintext" outlined label="Plaintext" :value="plaintext" @input.native="e=>plaintext = e.target.value">
-		 <v-icon id="plaintext_Icon"
-      slot="append" 
-      @click="copyIt($event)"
+		 <v-btn slot="append" id="plaintext_Icon"
+      @click="copyIt($event)" fab small text >
+     <v-icon 
+      medium
+     aria-label="Copy-Plaintext" role="img" aria-name="Copy" aria-hidden="false"
+
      
   >
+
     mdi-content-copy
  </v-icon>
-
+</v-btn>
 	</v-textarea>
 	<v-btn @click="create_msg">
 		Encode Msg
 	</v-btn>
 
 	<v-textarea  v-if="CodeReady" class="my-4"  readonly id="encodedMsg" outlined label="Encoded Message" :value="encodedMsg" @input.native="e=>encodedMsg = e.target.value">
-		 <v-icon id="encodedMsg_Icon"
-      slot="append" 
-      @click="copyIt($event)"
+		<v-btn slot="append" id="encodedMsg_Icon"
+      @click="copyIt($event)" fab small text >
+     <v-icon 
+      medium
+     aria-label="Copy-Encoded-Msg" role="img" aria-name="Copy" aria-hidden="false"
+
      
   >
-      mdi-content-copy
-</v-icon>
+
+    mdi-content-copy
+ </v-icon>
+</v-btn>
 </v-textarea>
-	 <v-simple-table v-if="CodeReady">
+	 <v-simple-table id="lookUp" v-if="CodeReady">
     <template v-slot:default>
       <thead>
         <tr>
@@ -48,7 +57,19 @@
       </tbody>
     </template>
   </v-simple-table>
+  <v-btn  v-if="CodeReady" id="lookUp_btn"
+      @click="copyVar(codeBook)"   text >
+     <v-icon 
+      medium
+     aria-label="Copy-Table" role="img" aria-name="Copy" aria-hidden="false"
 
+     
+  >
+
+    mdi-content-copy
+ </v-icon>
+ Copy Table
+</v-btn>
 </v-card>
 </section>
 

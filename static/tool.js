@@ -87,8 +87,12 @@ view = new Vue({
       target.value += content
      
    },
+   copyVar: async function(item){
+     content = await navigator.clipboard.writeText(JSON.stringify(item));
+   },
    copyIt: async function(eve)
    {
+
     try {
         targetId = eve.currentTarget.id;
       targetId = targetId.split('_')[0];
@@ -99,7 +103,9 @@ view = new Vue({
           console.log(testingCodeToCopy)
           content = await navigator.clipboard.writeText(testingCodeToCopy);
     
-  } catch (err) {
+  }
+
+   catch (err) {
     console.error('Failed to copy: ', err);
   }
    }

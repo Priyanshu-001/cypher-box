@@ -7,25 +7,33 @@
 
 	
 	<v-textarea   id="plaintext" outlined label="plaintext" :value="plaintext" @input.native="e=>plaintext = e.target.value">
-     <v-icon id="plaintext_Icon"
-      slot="append" 
-      @click="copyIt($event)"
+    <v-btn slot="append" id="plaintext_Icon"
+      @click="copyIt($event)" fab small text >
+     <v-icon 
+      medium
+     aria-label="Copy-Plaintext" role="img" aria-name="Copy" aria-hidden="false"
+
      
   >
+
     mdi-content-copy
  </v-icon>
-
+</v-btn>
 </v-textarea>
  
 	<v-textarea   id="ASCII" outlined label="ASCII" readonly :value="ascii" @input.native="e=>ascii = e.target.value">
-     <v-icon id="ASCII_Icon"
-      slot="append" 
-      @click="copyIt($event)"
+     <v-btn slot="append" id="ASCII_icon"
+      @click="copyIt($event)" fab small text >
+     <v-icon 
+      medium
+     aria-label="Copy-ASCII" role="img" aria-name="Copy" aria-hidden="false"
+
      
   >
+
     mdi-content-copy
  </v-icon>
-
+</v-btn>
   </v-textarea>
 
 	
