@@ -10,19 +10,13 @@
   min-width: 150px;
   min-height: 180px;
   max-width: 400px;
-  width: 30%;
+  width: 29%;
   box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 2px 9px 1px rgb(0 0 0 / 12%), 0 4px 2px -2px rgb(0 0 0 / 20%);
     
 }
 
 
-@media only screen and (max-width: 500px)
-{
-    .snippets{
-      margin: 8px;
 
-    }
-}
 @media only screen and (max-width: 300px)
 {
     .snippets{
