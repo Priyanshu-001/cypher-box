@@ -77,21 +77,22 @@
         </v-row>
       </v-container>
         <v-container class= "column justify-start align-space-around">
-          <v-row class="d-flex align-space-around">
+          <v-container overflow="wrap" id="container1" class="d-flex justify-space-around flex-wrap" wrap>
               
              {% for cipher in Ciphers %}
-           
+          
                 <div class="snippets" v-if="(filter.includes('{{ cipher.cat }}') || filter.length===0) && ('{{ cipher.name }}'.toLowerCase().indexOf(search.toLowerCase()) !== -1 || search == '') " style="background: linear-gradient(0deg, {{cipher.grad2}} 0%, {{cipher.grad1}} 100%);">
               <a href="/tool/{{cipher.urlName}}" style="color: white;">
-              {{cipher.name}}
+            <p>  {{cipher.name}}</p>
               </a>
           </div>
+
 
           
                  
           {% endfor %}
           
-          </v-row>
+          </v-container>
       
         </v-container>    
         </v-container>
