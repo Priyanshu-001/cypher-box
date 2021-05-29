@@ -21,7 +21,7 @@
 </v-btn>
 </v-textarea>
  
-	<v-textarea   id="ASCII" outlined label="ASCII"  :value="ascii" @input.native="e=>ascii = e.target.value">
+	<v-textarea   id="ASCII" outlined label="ASCII" readonly :value="ascii" @input.native="e=>ascii = e.target.value">
      <v-btn slot="append" id="ASCII_icon"
       @click="copyIt($event)" fab small text >
      <v-icon 
