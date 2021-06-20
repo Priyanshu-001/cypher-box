@@ -8,19 +8,35 @@
 
   {% block content %}
           
-        <v-container class="d-flex flex-column align-center justify-center pa-5 " transition="slide-y-transition">
-          <h1 class="text-h2 align-center py-15 strong">
-             Cypher-Box
+        <v-container class="d-flex flex-column  pa-5 " transition="slide-y-transition" style="min-height: 80vh;">
+          <h1 class="text-h2 font-weight-black  py-15 pb-4 ">
+            For all things cryptic
+           
           </h1>
-          <p class="body-4  strong align-center">
-              Cypher-Box contains all the  encryption and decryption tools you need for a deciphering adventure.
+
+            <hr> 
+          <p class="body-4 align-center" style= "max-width:70ch; font-size: 1.2rem;">
+              Cypher-Box is the perfect companion for your deciphering adventures.
+Cypher-Box brings commonly used encryption ciphers to one place.
+Here you can find various online encryption and decryption tools including but not limited to Morse Code Translator, Vingere Cipher, 
+Caesar Cipher and many more scheduled to be added soon.
           </p>
           <p>
 
           </p>
-
+          <v-container class="d-flex justify-start xs:justify-space-around">
+           
+          <v-btn @click="location.href='#list'" color="var(--secondary)" class="mx-2" >
+            View all ciphers
+          </v-btn>
+       
+           <v-btn  @click="location.href='login'" color="white" class="black--text mx-2">
+            Login
+          </v-btn>
+       
         </v-container>
-        <v-container  class="d-flex flex-column align-center  rounded-t-xl grey darken-4"  color="colors.red.darken1">
+        </v-container >
+        <v-container id="list" class="d-flex flex-column align-center  rounded-t-xl grey darken-4"  color="colors.red.darken1">
         
            <h2 class="text-h3 align-center">
             All Cyphers

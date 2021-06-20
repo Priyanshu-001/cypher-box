@@ -8,6 +8,10 @@ CharField.register_lookup(Lower)
 # CharField.register_lookup(trigram_similar)
 
 # Create your views here.
+def myProfile(req):
+	return HttpResponse('your profile')
+def profile(req,username):
+	return HttpResponse(f'hii {username}')
 def gverify(req):
 	return HttpResponse('google-site-verification: google72554b0362b554d7.html')
 def home(req):
@@ -35,6 +39,7 @@ def search(req):
 	return render(req,'main/search.html', {'results': results, 'q': query, 'T': trun})
 
 def offline(req):
-
 	return render(req, 'main/offline.html')
+
+
 
