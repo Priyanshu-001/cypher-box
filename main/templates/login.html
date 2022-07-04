@@ -1,0 +1,29 @@
+{% extends "headAndFoot.html" %}
+
+{% block content %}
+
+<v-container class="d-flex justify-center align-center">
+<v-card class="pa-3" style="width:80vw">
+	<v-card-title>
+		Login
+	</v-card-title>
+	<form method="POST">	
+	{% csrf_token %}
+	<v-text-field outlined label="Username" name="userName" dark>
+	</v-text-field>
+	<v-text-field outlined label="Password" name="password" type="password" dark>
+	</v-text-field>
+	<v-card-actions>
+		<v-btn color="var(--secondary)" type="submit">
+			Login
+		</v-btn>
+	</v-card-actions>
+	</form>
+
+</v-card>
+</v-container>
+
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="static/app.js"></script>
+{% endblock %}

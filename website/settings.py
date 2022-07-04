@@ -81,22 +81,8 @@ WSGI_APPLICATION = 'website.wsgi.app'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+DATABASES = {}
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'daih6q3kum9id7',
-    #     'USER': 'naiwbkcolqzwfu',
-    #     'PASSWORD': '97f2c9e7ab1eef74010972c7452d24c47cb677f5103245a79f71fcb04b8fa711',
-    #     'HOST': 'ec2-54-220-35-19.eu-west-1.compute.amazonaws.com',
-    #     'PORT': '5432',
-    #     'DATABASE_URL': 'postgres://naiwbkcolqzwfu:97f2c9e7ab1eef74010972c7452d24c47cb677f5103245a79f71fcb04b8fa711@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/daih6q3kum9id7'
-    # }
-}
 if 'DATABASE_URL' in os.environ:
     DEBUG = False
     DATABASES['default'] = dj_database_url.config()
@@ -111,7 +97,21 @@ else:
     }
 
     }
-    
+# DATABASES = {
+# #     # 'default': {
+# #     #     'ENGINE': 'django.db.backends.sqlite3',
+# #     #     'NAME': BASE_DIR / 'db.sqlite3',
+# #     # }
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'daih6q3kum9id7',
+#         'USER': 'naiwbkcolqzwfu',
+#         'PASSWORD': '97f2c9e7ab1eef74010972c7452d24c47cb677f5103245a79f71fcb04b8fa711',
+#         'HOST': 'ec2-54-220-35-19.eu-west-1.compute.amazonaws.com',
+#         'PORT': '5432',
+#         'DATABASE_URL': 'postgres://naiwbkcolqzwfu:97f2c9e7ab1eef74010972c7452d24c47cb677f5103245a79f71fcb04b8fa711@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/daih6q3kum9id7'
+#     }
+# }
 
 
 # Password validation

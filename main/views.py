@@ -1,15 +1,34 @@
 from django.shortcuts import render
-from .models import tool
+from .models import tool,cryptUser
 from django.http import Http404, HttpResponse
+from django.shortcuts import redirect
 from django.db.models import CharField
 from django.db.models.functions import Lower
-
-CharField.register_lookup(Lower)
+from .forms import login as loginForm
+from django.contrib.auth import authenticate
+# CharField.register_lookup(Lower)
 # CharField.register_lookup(trigram_similar)
 
 # Create your views here.
+
+def login(req):
+	# print('hiii')
+	if req.method == 'POST':
+		print(req)
+		Loginform = loginForm(req.POST)
+		if Loginform.is_valid():
+			User = authenticate(username=req.POST.get('username'), password=req.POST.get('password'))
+			if (User is not None) or len(cryptUser.objects.filter( user_id = User.id))>0:
+					return HttpResponse('you are valid')
+	else:
+		Loginform = loginForm()
+	return render(req,'login.html',{'form':Loginform})
 def myProfile(req):
-	return HttpResponse('your profile')
+	if req.user.is_authenticated:
+		current = cryptUser.objects.filter( user_id = req.user.id)
+		if len(current) == 1:
+			return render(req,'me.html',{'user': req.user,'cryptUser': current[0]})
+	return redirect('/')
 def profile(req,username):
 	return HttpResponse(f'hii {username}')
 def gverify(req):
